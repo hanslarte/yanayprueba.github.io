@@ -1,0 +1,728 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat';
+}
+img{
+    width: 40px;
+}
+a{
+    text-decoration: none;
+
+    color: aliceblue;
+}
+li{
+    list-style: none;
+}
+
+/*--------content-header--------*/
+
+.content-header{
+    width: 100%;
+    height: 100vh;
+    /*background-image: url(../img/b1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;*/
+}
+
+/*-----------fondo--------------*/
+
+.fondo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.imgfondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*-----------header-------------*/
+.header{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    padding: 0 20px;
+}
+
+.header img,#cerrarnav{
+    cursor: pointer;
+}
+
+.header .logo{
+    width: 170px;
+}
+
+/*------------nav--------------*/
+.nav{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: all 0.5s;
+    display: none;
+
+}
+
+.abrirnavegador{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.boton-cerrar{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 150px;
+}
+
+.opciones{
+    width: 100%;
+    height: 60%;
+}
+.opciones a{
+    color: black;
+}
+
+.opciones .lista{
+    display: none;
+}
+
+.opciones .ac{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------------------------------animacion nav-----------------------------*/
+
+.animandonav{
+    animation: animacionnav 1s;
+    /*animation-delay: 1s;*/
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+}
+.animandonav2{
+    animation: animacionnav2 1s;
+    /*animation-delay: 1s;*/
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animacionnav{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(60px);
+        transition: all;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        transition: all;
+    }
+}
+
+@keyframes animacionnav2{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-60px);
+        transition: all;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+        transition: all;
+    }
+}
+
+/*---------------------------------------------------------------------------------*/
+
+
+.opciones .ac ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+.opciones .ac ul li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.opciones .ac ul .derecha{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.opciones .ac ul li a{
+    font-size: 30px;
+}
+
+
+.lista-redes{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*-----------content-titulos---*/
+.content-titulos{
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    padding-top: 200px;
+}
+
+.titulos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.titulo{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.activo{
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo h1{
+    font-size: 35px;
+}
+
+.titulo h2{
+    font-size: 30px;
+}
+.animadoh2{
+    opacity: 0;
+}
+
+.titulo p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    opacity: 0;
+}
+
+.titulo p a{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid white;
+}
+
+
+
+
+.visible{
+    visibility: visible;
+    opacity: 1;
+}
+
+.oculto{
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*-----------------------------------animacion titulos-----------------------------*/
+
+.animando{
+    animation: animacion 1s;
+    animation-timing-function:ease-in-out;
+}
+.animando2{
+    animation: animacion 1s;
+    animation-delay: 1s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+}
+.animando3{
+    animation: animacion 1s;
+    animation-delay: 2s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+}
+.animando4{
+    animation: animacion 1s;
+    animation-delay: 3s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animacion{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(60px);
+        transition: all;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        transition: all;
+    }
+}
+
+
+
+/*------main--------*/
+.main{
+    width: 100%;
+}
+/*-------------categorias-----------*/
+.main-categorias{
+    width: 100%;
+}
+
+.titulo-categoria{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.subrayado{
+    width: 50%;
+    height: 2px;
+    background-color: aqua;
+}
+
+.content-categoria{
+    width: 100%;
+    height: 100vh;
+}
+
+.categoria{
+    max-width: 500px;
+    width: 100%;
+    height: 25%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categoria img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.categoria h2{
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+/*-----------ofertas----------------*/
+
+.main-ofertas{
+    width: 100%;
+}
+
+.titulo-ofertas{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-ofertas{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.card{
+    width: 250px;
+    height: 350px;
+    background-color: aliceblue;
+}
+.card-img{
+    width: 100%;
+    height: 60%;
+    padding: 10px 20px;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-info{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+}
+.card-info span{
+    margin-top: 10px;
+}
+
+.card-info a{
+    background-color: red;
+    padding: 10px 20px;
+}
+
+.mas-ofertas{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mas-ofertas a{
+    background-color: aqua;
+    padding: 10px 20px;
+}
+
+
+/*--------nosotros----------*/
+
+.main-nosotros{
+    width: 100%;
+    height: 90vh;
+    background-color: #baf1e4;
+}
+
+.content-nosotros{
+    width: 100%;
+    height: 100%;
+}
+
+.img-nosotros{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-nosotros img{
+    width: 80%;
+    height: 80%;
+}
+
+.info-nosotros{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+.info-nosotros p{
+    padding: 0px 20px;
+}
+
+
+/*-----------footer-------------*/
+.footer{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.item-footer{
+    width: 100%;
+}
+
+
+/*----------media query-----------*/
+
+@media only screen and (max-width: 767px){
+
+    .content-categoria{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center ;
+    }
+
+    .categoria{
+        max-width: 500px;
+        width: 100%;
+        height: 25%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 767px){
+
+
+    /*------------nav---------------*/
+
+    .abrirnavegador{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        background-color: white;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.5s;
+    }
+
+    .opciones .ac{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 200px;
+    }
+
+
+
+
+/*---------categorias--------------*/
+
+    .content-categoria{
+        width: 100%;
+        height: 80vh;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        'perso perso torta torta'
+        'cupa cupa bro  bro';
+        gap: 20px;
+    }
+
+    .categoria{
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .personalizado{
+        grid-area: perso;
+    }
+
+    .torta{
+        grid-area: torta;
+    }
+
+    .cupcake{
+        grid-area: cupa;
+    }
+
+    .brownie{
+        grid-area: bro;
+    }
+
+
+
+/*----------------ofertas------------*/
+
+.content-ofertas{
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        'c1 c2'
+        'c3 c4';
+    gap: 20px;
+    justify-items: center;
+}
+    
+.card{
+    width: 250px;
+    height: 350px;
+    background-color: aliceblue;
+}
+
+.c1{
+    grid-area: c1;
+}
+.c2{
+    grid-area: c2;
+}
+.c3{
+    grid-area: c3;
+}
+.c4{
+    grid-area: c4;
+}
+
+}
+
+
+
+@media only screen and (min-width: 1000px){
+
+    .opciones .ac #flechar img{
+        margin-right: 200px;
+    }
+
+    .opciones .ac #flechal img{
+        margin-left: 200px;
+    }
+
+
+
+
+
+
+    .content-categoria{
+        width: 100%;
+        height: 100vh;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        'perso perso torta torta'
+        'perso perso cupa  bro';
+        gap: 2px;
+    }
+
+    .categoria{
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .personalizado{
+        grid-area: perso;
+    }
+
+    .torta{
+        grid-area: torta;
+    }
+
+    .cupcake{
+        grid-area: cupa;
+    }
+
+    .brownie{
+        grid-area: bro;
+    }
+    
+
+
+
+
+    .content-ofertas{
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
