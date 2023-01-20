@@ -1,57 +1,52 @@
-const animado=document.querySelectorAll('.animado');
-let titulo=document.querySelectorAll('.titulo');
+let imagenes=['../imagenes/imagenes-principal/b1.jpg','../imagenes/imagenes-principal/b2.jpg','../imagenes/imagenes-principal/b3.jpg'];
 
+let contador=-1;
 
-let imagenes=["./img/b1.jpg","./img/b2.jpg","./img/b3.jpg"]
-var contador=0;
+function carruselFondo(){
 
-
-function carrusel(){
     contador++;
+
+    
     if(contador>=3){
         contador=0;
     }
-    document.getElementById('imgf').setAttribute("src",imagenes[contador]);
-    setTimeout(carrusel,7000);
+
+    document.getElementById('fondoimagen').setAttribute("src",imagenes[contador]);
+
+    setTimeout(carruselFondo,5000);
+
 }
 
-let c=0;
+let contentTitulos=document.querySelectorAll('.content-titulos');
+let padre=document.querySelector('.main-titulos');
 
-function carruselt(){
+let cantidad=-1;
 
-    titulo[c].classList.remove('activo');
-    c++;
+function cambioTitulos(){
 
-    if(c>=titulo.length){
-        c=0;
+    cantidad++;
+
+    if(cantidad>=3){
+        cantidad=0;
+    }
+    let titulo=contentTitulos[cantidad];
+    
+    if(!padre.lastElementChild.classList.contains('oculto')){
+        padre.lastElementChild.classList.add('oculto');
+        titulo.classList.add('animando');
+        padre.firstElementChild.classList.remove('oculto');
     }
 
-    titulo[c].classList.add('activo');
+    if(titulo.classList.contains('oculto')){
+        titulo.classList.remove('oculto');
+        titulo.classList.add('animando');
+        titulo.previousElementSibling.classList.add('oculto');
+    }
 
-    setTimeout(carruselt,7000);
+
+    setTimeout(cambioTitulos,5000);
 }
 
-let animadoh1=document.querySelectorAll('.animadoh1');
-let animadoh2=document.querySelectorAll('.animadoh2');
-let animadop1=document.querySelectorAll('.animadop1');
-let animadop2=document.querySelectorAll('.animadop2');
-
-function arriba(){
-    if(titulo[c].classList.contains("activo")){
-        animadoh1[c].classList.add('animando');
-        animadoh2[c].classList.add('animando2');
-        animadop1[c].classList.add('animando3');
-        animadop2[c].classList.add('animando4');
-    }
-
-    setTimeout(arriba,7000);
-
-};
 
 
-
-
-
-document.body.setAttribute("onload","carrusel();carruselt();arriba()");
-
-
+document.body.setAttribute("onload","carruselFondo();cambioTitulos()");

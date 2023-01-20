@@ -1,34 +1,28 @@
-const menu=document.getElementById('menu');
-const cerrarnav=document.getElementById('cerrarnav');
-const navegador=document.querySelector('.nav');
+const abrir=document.getElementById('abrirNav');
+const cerrar =document.getElementById('cerrar');
+const nav=document.querySelector('.nav');
 
-menu.addEventListener('click',()=>{
-    navegador.classList.add('abrirnavegador');
+const entrar=document.getElementById('entrar');
+const regresar=document.getElementById('regresar');
+
+const entrarTienda=document.getElementById('entrarTienda');
+const salirTienda=document.getElementById('salirTienda');
+
+abrir.addEventListener('click',()=>{
+    nav.classList.add('abrir-nav');
 });
 
-cerrarnav.addEventListener('click',()=>{
-    navegador.classList.remove('abrirnavegador');
+cerrar.addEventListener('click',()=>{
+    nav.classList.remove('abrir-nav');
 });
 
-const lista=document.querySelectorAll('.lista');
-const flechar=document.getElementById('flechar');
-const flechal=document.getElementById('flechal');
-
-let a=0;
-
-flechar.addEventListener('click',()=>{
-    lista[a].classList.add('animandonav');
-    if(a==0){
-        lista[a].classList.remove('ac');
-        lista[a+1].classList.add('ac');
-    }
-    a++;
+entrarTienda.addEventListener('click',()=>{
+    entrar.classList.remove('listaizquierda');
+    regresar.classList.add('listaderecha');
 });
 
-flechal.addEventListener('click',()=>{
-    if(a==1){
-        lista[a].classList.remove('ac');
-        lista[a-1].classList.add('ac');
-    }
-    a--;
+salirTienda.addEventListener('click',()=>{
+    regresar.classList.remove('listaderecha');
+    entrar.classList.add('listaizquierda');
 });
+

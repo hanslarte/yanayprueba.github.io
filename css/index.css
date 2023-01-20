@@ -1,0 +1,287 @@
+/*-------------------header---------------*/
+.main-header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.img-fondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.fondo-transparente{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.barra-nav{
+    width: 100%;
+    height: 30%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.barra-nav a img{
+    width: 180px;
+}
+
+.barra-nav img{
+    cursor: pointer;
+}
+
+.main-titulos{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-titulos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-titulos h1{
+    color: aliceblue;
+    font-size: 35px;
+}
+.content-titulos h2{
+    color: aliceblue;
+    font-size: 30px;
+}
+.content-titulos p{
+    color: aliceblue;
+    font-size: 20px;
+}
+.content-titulos a{
+    font-size: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+
+
+.oculto{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*------------animacion titulos header---------*/
+.animando{
+    animation: animacion 1s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animacion{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(60px);
+        transition: all;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        transition: all;
+    }
+}
+
+
+/*--------------main-------------------*/
+
+.main{
+    width: 100%;
+}
+
+/*------------categorias------------*/
+.titulo-categoria{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-categoria h2{
+    text-decoration: underline;
+}
+.scroll-animado{
+    opacity: 0;
+}
+
+.content-categorias{
+    width: 100%;
+    height: 90vh;
+}
+
+.categoria{
+    width: 100%;
+    height: 25%;
+    position: relative;
+}
+
+.categoria img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.categoria a{
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.categoria h3{
+    position: relative;
+    z-index: 3;
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.categoria a:hover{
+    transition: all 1s;
+    transform: scale(1.2);
+}
+
+
+/*------ofertas----------*/
+
+.titulo-ofertas{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-ofertas{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    'ba o1'
+    'o2 o3';
+}
+
+.oferta{
+    width: 100%;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.banner-oferta{
+    grid-area: ba;
+}
+.oferta1{
+    grid-area: o1;
+}
+.oferta2{
+    grid-area: o2;
+}
+.oferta3{
+    grid-area: o3;
+}
+
+/*-------------nosotros--------------*/
+
+.nosotros{
+    width: 100%;
+    height: 80vh;
+}
+.titulo-nosotros{
+    width: 100%;
+    height: 20%;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+.content-nosotros{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-nosotros{
+    width: 100%;
+    height: 60%;
+}
+.img-nosotros img{
+    width: 100%;
+    height: 100%;
+}
+
+.p-nosotros{
+    width: 100%;
+    height: 40%;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*----------footer----------*/
+.footer{
+    width: 100%;
+    height: 60vh;
+}
+.item-footer{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.footer-redes{
+    display: flex;
+    gap: 20px;
+}
+
+
+.mostrarArriba{
+    animation: mostrararriba 2s;
+}
+
+@keyframes mostrararriba{
+    0%{
+        transform: translateY(60px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
